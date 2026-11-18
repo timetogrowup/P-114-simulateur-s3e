@@ -20,7 +20,7 @@ concurrency:
 jobs:
   calendrier:
     name: Sélectionner 05h Europe/Paris
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     outputs:
       run_tests: ${{ steps.slot.outputs.run_tests }}
     steps:
@@ -47,7 +47,7 @@ jobs:
     name: Calculs et Chromium — quotidien
     needs: calendrier
     if: needs.calendrier.outputs.run_tests == 'true'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 18
     steps:
       - name: Récupérer le code

@@ -8,7 +8,7 @@ permissions:
 jobs:
   qualite:
     name: Tests, référentiels et documentation
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Récupérer le dépôt et son historique
         uses: actions/checkout@v4
@@ -44,7 +44,7 @@ jobs:
 
   navigateur:
     name: Parcours Chromium mobile et bureau
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - name: Récupérer le code

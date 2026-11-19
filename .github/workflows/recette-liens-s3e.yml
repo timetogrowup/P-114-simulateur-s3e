@@ -1,0 +1,51 @@
+name: Vérifier les liens publics S3E
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/recette-liens-s3e.yml'
+permissions: {}
+jobs:
+  recette:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Installer Playwright et Chromium
+        run: |
+          pip install playwright==1.56.0
+          python -m playwright install chromium
+      - name: Tester les anciennes adresses en ligne
+        shell: python
+        run: |
+          from playwright.sync_api import sync_playwright, expect
+          origin = 'https://timetogrowup.github.io/'
+          routes = [
+              ('', 'root', 'Simulateur S3E · Recette mobile'),
+              ('vehicules/', 'accueil', 'Véhicules électriques de fonction — Guide S3E'),
+              ('sbs/', 'cover', 'Mon passage chez SBS · S3E'),
+          ]
+          with sync_playwright() as pw:
+              browser = pw.chromium.launch()
+              for profile in ('Desktop Chrome', 'Pixel 7'):
+                  context = browser.new_context(**pw.devices[profile])
+                  for path, anchor, title in routes:
+                      for suffix in ('', '?source=recette&valeur=a%20b#' + anchor):
+                          page = context.new_page()
+                          response = page.goto(origin + 'simulateur-s3e/' + path + suffix, wait_until='commit')
+                          assert response.ok, response.status
+                          expect(page).to_have_url(origin + 'P-114-simulateur-s3e/' + path + suffix)
+                          expect(page).to_have_title(title)
+                          expect(page.locator('#' + anchor)).to_have_count(1)
+                          if path == 'sbs/':
+                              page.get_by_role('button', name='Feuilleter la brochure complète').click()
+                              expect(page.locator('#gallery')).to_be_visible()
+                          elif path == 'vehicules/':
+                              page.get_by_role('button', name='Les huit sujets du guide').click()
+                              expect(page.locator('#lp-sommaire-title')).to_have_attribute('aria-expanded', 'true')
+                          else:
+                              page.get_by_role('button', name='Commencer').click()
+                              expect(page.get_by_role('button', name='Suivant')).to_be_visible()
+                          print(profile, page.url, title, flush=True)
+                          page.close()
+                  context.close()
+              browser.close()

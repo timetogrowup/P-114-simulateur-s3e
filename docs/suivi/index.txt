@@ -35,3 +35,8 @@ Run : https://github.com/timetogrowup/simulateur-s3e/actions/runs/39220700988
 2026-10-19 | EVOL-COM-001 lot T1 : collecteur Cloudflare Workers/D1 créé dans le dépôt, tests de sécurité/agrégats et CI réussis ; service NON déployé, aucune collecte réelle.
 Fichier : docs/suivi/2026-10-19_lot_T1_collecteur_cloudflare.txt
 CI : https://github.com/timetogrowup/simulateur-s3e/actions/runs/39236983517
+
+
+2026-11-19 | Incident transitoire de recette quotidienne : installation Playwright indisponible à cause d’erreurs HTTP 503 des dépôts Ubuntu ; relance ciblée réussie à la tentative 2, sans modification du code ni des contrôles.
+Fichier : docs/suivi/2026-11-19_incident_apt_recette_quotidienne.txt
+Run : https://github.com/timetogrowup/P-114-simulateur-s3e/actions/runs/44522322201/attempts/2

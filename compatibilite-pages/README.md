@@ -11,15 +11,14 @@ Le dépôt `timetogrowup/simulateur-s3e` est devenu `timetogrowup/P-114-simulate
 - Ancienne page SBS : https://timetogrowup.github.io/simulateur-s3e/sbs/
 - Nouvelle page SBS : https://timetogrowup.github.io/P-114-simulateur-s3e/sbs/
 
-## Déploiement de compatibilité (action ponctuelle nécessaire)
-1. Créer le dépôt **public** `timetogrowup/timetogrowup.github.io` avec une branche `main`. Cette création ne peut pas être faite par les actions du connecteur GitHub actuellement disponibles.
-2. Copier le contenu du dossier `compatibilite-pages/simulateur-s3e/` à la racine du NOUVEAU dépôt, en conservant l'arborescence `simulateur-s3e/...`.
-3. Dans Settings > Pages du nouveau dépôt, choisir **Deploy from a branch**, `main`, `/(root)`.
-4. Vérifier les trois anciennes URLs, les redirections vers le dépôt normalisé, et une URL avec paramètres ou ancre.
+## Publication et maintenance
 
-**Important : ne pas recréer de dépôt nommé `simulateur-s3e`**, car cela casserait les redirections Git de l'ancien dépôt vers `P-114-simulateur-s3e`.
+Le dépôt public [timetogrowup.github.io](https://github.com/timetogrowup/timetogrowup.github.io) publie la branche `main`, dossier `/(root)`. Le [commit de mise en service](https://github.com/timetogrowup/timetogrowup.github.io/commit/6a0de035763d1db4665a354a5af7ae3321b84e2e) ajoute trois fichiers sous `simulateur-s3e/`.
 
-Les pages ci-dessus sont des redirections HTML avec `meta refresh` et `location.replace`; elles ne constituent pas des redirections HTTP 301. Le JavaScript conserve recherche et ancre de l'URL. Les pages affichent aussi un lien alternatif sans script.
+Pour changer une destination, modifier la copie source sous `compatibilite-pages/simulateur-s3e/`, puis reporter le fichier dans le dépôt de publication au même chemin à partir de `simulateur-s3e/`. Attendre le déploiement Pages, puis lancer [la recette en ligne](https://github.com/timetogrowup/P-114-simulateur-s3e/actions/workflows/recette-liens-s3e.yml) avec **Run workflow**.
 
-## Statut au 19 novembre 2026
-Source de compatibilité préparée dans ce dépôt. Publication sur l'ancienne URL **non réalisée** tant que `timetogrowup.github.io` n'est pas créé et que GitHub Pages n'y est pas activé. Ne pas annoncer la réparation comme achevée avant validation externe.
+La page historique répond en HTTP 200. Le navigateur charge ensuite la destination via `location.replace`, en conservant paramètres et fragment. Sans JavaScript, le rafraîchissement HTML et le lien de secours mènent à la page canonique sans recopier les paramètres.
+
+## Retour arrière
+
+Pour annuler une modification future, rétablir uniquement les fichiers concernés à partir du dernier commit validé, dans un nouveau commit sur `main`, puis relancer la recette après publication. Pour retirer précisément la mise en service initiale, utiliser `git revert 6a0de035763d1db4665a354a5af7ae3321b84e2e` dans le dépôt de publication. Cette opération retire les trois anciens accès. Les pages officielles restent hébergées dans P-114.

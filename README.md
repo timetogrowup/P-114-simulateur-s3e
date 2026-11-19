@@ -4,7 +4,13 @@ Prototype public destiné uniquement à la recette fonctionnelle. Les données A
 
 ## Démarrage
 
-Ouvrir `index.html` via GitHub Pages après activation dans Settings > Pages (Deploy from a branch > main > /root).
+| Page | Adresse officielle | Favoris historiques |
+|---|---|---|
+| Simulateur | [Ouvrir](https://timetogrowup.github.io/P-114-simulateur-s3e/) | [Ancienne adresse](https://timetogrowup.github.io/simulateur-s3e/) |
+| Guide véhicules | [Ouvrir](https://timetogrowup.github.io/P-114-simulateur-s3e/vehicules/) | [Ancienne adresse](https://timetogrowup.github.io/simulateur-s3e/vehicules/) |
+| Guide SBS | [Ouvrir](https://timetogrowup.github.io/P-114-simulateur-s3e/sbs/) | [Ancienne adresse](https://timetogrowup.github.io/simulateur-s3e/sbs/) |
+
+La [documentation de publication](compatibilite-pages/README.md) décrit la mise à jour des redirections et le retour arrière.
 
 ## Parcours
 

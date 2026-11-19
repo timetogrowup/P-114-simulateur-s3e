@@ -7,7 +7,7 @@ on:
 permissions: {}
 jobs:
   recette:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 8
     steps:
       - name: Installer Playwright et Chromium
@@ -40,8 +40,8 @@ jobs:
                               page.get_by_role('button', name='Feuilleter la brochure complète').click()
                               expect(page.locator('#gallery')).to_be_visible()
                           elif path == 'vehicules/':
-                              page.get_by_role('button', name='Les huit sujets du guide').click()
-                              expect(page.locator('#lp-sommaire-title')).to_have_attribute('aria-expanded', 'true')
+                              page.locator('#lp-sommaire-title').click()
+                              expect(page.locator('#lp-sommaire details')).to_have_attribute('open', '')
                           else:
                               page.get_by_role('button', name='Commencer').click()
                               expect(page.get_by_role('button', name='Suivant')).to_be_visible()

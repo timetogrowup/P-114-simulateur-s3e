@@ -251,9 +251,9 @@ function render(){
  if($('compare'))$('compare').onclick=()=>{$('mode').value='new';render()};
  updatePrintDetails();
 }
-let folded=[];
-window.addEventListener('beforeprint',()=>{folded=[...document.querySelectorAll('#summary details:not([open])')];folded.forEach(d=>d.open=true)});
-window.addEventListener('afterprint',()=>{folded.forEach(d=>d.open=false);folded=[]});
+let folded=null;
+window.addEventListener('beforeprint',()=>{if(folded!==null)return;folded=[...document.querySelectorAll('#summary details:not([open])')];folded.forEach(d=>d.open=true)});
+window.addEventListener('afterprint',()=>{if(folded===null)return;folded.forEach(d=>d.open=false);folded=null});
 for(const id of ['mode','origin','status','car','eligible'])$(id).onchange=render;
 $('letter').value='Objet — Transfert vers SBS : ma fiche individuelle de transposition\n\nBonjour,\n\nDans le cadre de mon transfert de [entité] vers SBS le [date], pourriez-vous me transmettre ma fiche individuelle de transposition avant le transfert, ou m’indiquer sa date de remise ?\n\nJe souhaite comprendre le montant mensuel retenu pour mon indemnité différentielle de transfert, y compris s’il est nul. Pourriez-vous détailler les éléments comparés sur les douze mois de référence, la part variable au pivot, les écarts en brut et en net et les éléments exclus ou intégrés au salaire de base ?\n\nÀ qui puis-je signaler un éventuel écart ?\n\nBien cordialement,\n[Prénom NOM]';
 $('copy').onclick=async()=>{try{await navigator.clipboard.writeText($('letter').value);$('feedback').textContent='Mail copié.'}catch{$('letter').select();$('feedback').textContent='Texte sélectionné. Utilisez la commande Copier de votre appareil.'}};

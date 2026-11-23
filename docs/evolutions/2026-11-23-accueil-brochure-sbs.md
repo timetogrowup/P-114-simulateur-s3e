@@ -31,8 +31,8 @@ Placer le questionnaire en tête, inclure le véhicule de fonction et afficher l
 |---|---|---|
 | 1. Reprendre et cadrer | Identifier les deux adresses, les sources et l’état initial. | Réalisée. AGENTS.md et page de recette relus. Le guide de départ intègre 17 planches et quatre thèmes. |
 | 2. Développer | Profil en tête, bilan automatique, priorités et conseils par sujet, article 19.2 traité selon la situation. | Réalisée sur la branche de recette, commit 43400e1. Questionnaire conditionnel, bilan, conseils par sujet et rapport imprimable. Article 19.2 vérifié sur la page 34 du PDF « ACCORD SBS SIGNE NOVEMBRE 2026 ». |
-| 3. Tester | Vérifier les quatre modes, la modification du profil, le véhicule, les 17 planches et l’impression. | En cours. Reprise le 23 novembre : tests Chromium bureau et mobile, puis publication après réussite. |
-| 4. Publier et contrôler | Comparer les contenus effectivement servis sur les deux URL avec les versions attendues. | À réaliser. |
+| 3. Tester | Vérifier les quatre modes, la modification du profil, le véhicule, les 17 planches et l’impression. | Réalisée. 26 tests navigateur réussis, dont 22 dédiés à SBS (11 sur bureau et 11 sur mobile émulé). Correctif de restauration des rubriques après impression. PDF contrôlé sur 6 pages. |
+| 4. Publier et contrôler | Comparer les contenus effectivement servis sur les deux URL avec les versions attendues. | En cours. Tests réussis ; intégration et contrôle en ligne à effectuer. |
 
 La saisie reste locale au navigateur. Le guide réutilise son modèle de comparaison par origine et statut. La question véhicule porte sur la situation avant l’entrée chez SBS. Une réponse inconnue conduit à une vérification documentaire. La brochure, le courrier et le rapport imprimable restent accessibles. Reprendre à la première étape ouverte et consigner les limites observées dans cette table.
 
@@ -41,3 +41,13 @@ La saisie reste locale au navigateur. Le guide réutilise son modèle de compara
 Exécuter des tests navigateur reproductibles pour les quatre modes d’entrée, les réponses incomplètes, les différents régimes véhicule, la modification du profil, les liens vers les 17 planches, la confidentialité locale et le rapport imprimable. Contrôler les paragraphes avant/après/conseil de chaque sujet. Vérifier le rendu bureau et mobile émulé et corriger les anomalies constatées avant publication. Ces contrôles fonctionnels ne valent pas validation métier de l’ensemble des sources historiques du modèle.
 
 Après réussite, intégrer seulement la page sous `sbs-recette/`, les tests et le suivi. Comparer l’empreinte du HTML servi à celle du fichier livré et vérifier que `sbs/index.html` garde son empreinte initiale. Rejouer les parcours sur l’adresse de recette publique. Le retour arrière consiste à restaurer uniquement `sbs-recette/index.html` depuis `c2d6371`, sans toucher à `sbs/`.
+
+### Résultats locaux
+
+- `npx playwright test --reporter=list` : 26 réussites, aucun échec (22 contrôles SBS et 4 contrôles du simulateur existant).
+- `npm run test:unit` : contrôles existants réussis ; 9 tests du collecteur réussis. Le rapport du simulateur conserve son écart connu PR-03 sur la prise en charge partielle d’une borne, indépendant de la page SBS et hors périmètre de cette évolution.
+- Les deux PDF de test contiennent six pages, la clause véhicule et le courrier personnalisé. Contrôle visuel du rendu mobile et de la première page imprimée réalisé.
+- Anomalie corrigée : plusieurs événements `beforeprint` écrasaient la liste des rubriques initialement fermées. La mémorisation est désormais conservée jusqu’à `afterprint` ; le retour à l’écran rétablit les rubriques fermées.
+- Régression automatisée conservée dans `tests/sbs-recette.spec.cjs` et incluse dans les tests GitHub Actions via `playwright.config.cjs`. La variable `SBS_TEST_BASE` permet de rejouer les tests sur l’URL publique après déploiement.
+
+Limites : mobile émulé, sans essai sur Samsung physique. Les données de comparaison historiques sont réutilisées ; le contrôle fonctionnel ne certifie pas chaque règle métier. Aucun nom ni renseignement personnel n’est demandé ou transmis par le questionnaire.

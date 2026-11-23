@@ -14,3 +14,7 @@ La première section présente le titre, le crédit S3E, la couverture et le bou
 Patrick souhaite que le lecteur accède uniquement à la présentation et aux 17 planches. Masquer le formulaire, ses résultats et le pied de page associé au parcours individuel. Conserver les quatre points d’entrée et les commandes de la galerie. Le masquage doit aussi retirer les filtres de la navigation au clavier.
 
 Regrouper le parcours dans un conteneur masqué et masquer son pied de page. Publier sur la même adresse, tester l’accueil et les raccourcis, puis inscrire le résultat ici. Pour rétablir le parcours, annuler le commit de masquage.
+
+## Recette séparée du guide complet
+
+Publier sous `/sbs-recette/` la page autonome de la révision `6583265` pour tester la brochure et le parcours « Ma situation ». La page `/sbs/` conserve sa diffusion actuelle. Réutiliser le fichier historique avec ses ressources intégrées. Contrôler les deux URL, comparer les contenus servis aux versions attendues et tester la galerie et les filtres. Pour retirer la recette, supprimer uniquement `sbs-recette/index.html`.

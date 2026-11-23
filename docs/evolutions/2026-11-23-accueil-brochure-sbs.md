@@ -30,8 +30,14 @@ Placer le questionnaire en tête, inclure le véhicule de fonction et afficher l
 | Étape | Critère de fin | État et résultat |
 |---|---|---|
 | 1. Reprendre et cadrer | Identifier les deux adresses, les sources et l’état initial. | Réalisée. AGENTS.md et page de recette relus. Le guide de départ intègre 17 planches et quatre thèmes. |
-| 2. Développer | Profil en tête, bilan automatique, priorités et conseils par sujet, article 19.2 traité selon la situation. | À réaliser. |
-| 3. Tester | Vérifier les quatre modes, la modification du profil, le véhicule, les 17 planches et l’impression. | À réaliser. |
+| 2. Développer | Profil en tête, bilan automatique, priorités et conseils par sujet, article 19.2 traité selon la situation. | Réalisée sur la branche de recette, commit 43400e1. Questionnaire conditionnel, bilan, conseils par sujet et rapport imprimable. Article 19.2 vérifié sur la page 34 du PDF « ACCORD SBS SIGNE NOVEMBRE 2026 ». |
+| 3. Tester | Vérifier les quatre modes, la modification du profil, le véhicule, les 17 planches et l’impression. | En cours. Reprise le 23 novembre : tests Chromium bureau et mobile, puis publication après réussite. |
 | 4. Publier et contrôler | Comparer les contenus effectivement servis sur les deux URL avec les versions attendues. | À réaliser. |
 
 La saisie reste locale au navigateur. Le guide réutilise son modèle de comparaison par origine et statut. La question véhicule porte sur la situation avant l’entrée chez SBS. Une réponse inconnue conduit à une vérification documentaire. La brochure, le courrier et le rapport imprimable restent accessibles. Reprendre à la première étape ouverte et consigner les limites observées dans cette table.
+
+## Qualification du parcours — reprise du 23 novembre 2026
+
+Exécuter des tests navigateur reproductibles pour les quatre modes d’entrée, les réponses incomplètes, les différents régimes véhicule, la modification du profil, les liens vers les 17 planches, la confidentialité locale et le rapport imprimable. Contrôler les paragraphes avant/après/conseil de chaque sujet. Vérifier le rendu bureau et mobile émulé et corriger les anomalies constatées avant publication. Ces contrôles fonctionnels ne valent pas validation métier de l’ensemble des sources historiques du modèle.
+
+Après réussite, intégrer seulement la page sous `sbs-recette/`, les tests et le suivi. Comparer l’empreinte du HTML servi à celle du fichier livré et vérifier que `sbs/index.html` garde son empreinte initiale. Rejouer les parcours sur l’adresse de recette publique. Le retour arrière consiste à restaurer uniquement `sbs-recette/index.html` depuis `c2d6371`, sans toucher à `sbs/`.

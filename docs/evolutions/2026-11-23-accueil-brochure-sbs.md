@@ -30,7 +30,7 @@ Placer le questionnaire en tête, inclure le véhicule de fonction et afficher l
 | Étape | Critère de fin | État et résultat |
 |---|---|---|
 | 1. Reprendre et cadrer | Identifier les deux adresses, les sources et l’état initial. | Réalisée. AGENTS.md et page de recette relus. Le guide de départ intègre 17 planches et quatre thèmes. |
-| 2. Développer | Profil en tête, bilan automatique, priorités et conseils par sujet, article 19.2 traité selon la situation. | À réaliser. |
+| 2. Développer | Profil en tête, bilan automatique, priorités et conseils par sujet, article 19.2 traité selon la situation. | Réalisée sur la branche de recette, commit 43400e1. Questionnaire conditionnel, bilan, conseils par sujet et rapport imprimable. Article 19.2 vérifié sur la page 34 du PDF « ACCORD SBS SIGNE NOVEMBRE 2026 ». |
 | 3. Tester | Vérifier les quatre modes, la modification du profil, le véhicule, les 17 planches et l’impression. | À réaliser. |
 | 4. Publier et contrôler | Comparer les contenus effectivement servis sur les deux URL avec les versions attendues. | À réaliser. |
 

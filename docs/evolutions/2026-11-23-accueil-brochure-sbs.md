@@ -24,3 +24,14 @@ Qualification du 23 novembre 2026. La recette publiée au commit `c2d6371` sert 
 ## Parcours de recette par situation
 
 Placer le questionnaire en tête, inclure le véhicule de fonction et afficher le bilan dès la dernière réponse. Présenter les priorités du profil, puis les thèmes avec des phrases avant/après et un conseil syndical par sujet. Distinguer les conseils rédigés pour le guide de la position publiée du S3E. Pour le véhicule, appliquer l’article 19.2 de l’accord signé, p. 34, en distinguant le régime Groupe et le groupe fermé. Tester les profils transfert, mobilité, embauche et incertitude, la mise à jour du bilan, la brochure et l’impression. Publier uniquement sous sbs-recette et comparer les deux pages aux fichiers attendus. Retour arrière par restauration de la recette c2d6371.
+
+## Feuille de route de reprise — 23 novembre 2026
+
+| Étape | Critère de fin | État et résultat |
+|---|---|---|
+| 1. Reprendre et cadrer | Identifier les deux adresses, les sources et l’état initial. | Réalisée. AGENTS.md et page de recette relus. Le guide de départ intègre 17 planches et quatre thèmes. |
+| 2. Développer | Profil en tête, bilan automatique, priorités et conseils par sujet, article 19.2 traité selon la situation. | À réaliser. |
+| 3. Tester | Vérifier les quatre modes, la modification du profil, le véhicule, les 17 planches et l’impression. | À réaliser. |
+| 4. Publier et contrôler | Comparer les contenus effectivement servis sur les deux URL avec les versions attendues. | À réaliser. |
+
+La saisie reste locale au navigateur. Le guide réutilise son modèle de comparaison par origine et statut. La question véhicule porte sur la situation avant l’entrée chez SBS. Une réponse inconnue conduit à une vérification documentaire. La brochure, le courrier et le rapport imprimable restent accessibles. Reprendre à la première étape ouverte et consigner les limites observées dans cette table.

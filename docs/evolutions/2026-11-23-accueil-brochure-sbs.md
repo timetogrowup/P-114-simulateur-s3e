@@ -8,3 +8,9 @@ Réorganiser l’accueil de sbs/index.html en réutilisant la couverture, la gal
 
 ## Réalisation
 La première section présente le titre, le crédit S3E, la couverture et le bouton ouvrant la première planche. Contrôles locaux réussis sur les quatre destinations, le décodage des 17 images et la présence du formulaire. Le script du guide est identique à la version précédente.
+
+## Affichage temporaire de la brochure seule
+
+Patrick souhaite que le lecteur accède uniquement à la présentation et aux 17 planches. Masquer le formulaire, ses résultats et le pied de page associé au parcours individuel. Conserver les quatre points d’entrée et les commandes de la galerie. Le masquage doit aussi retirer les filtres de la navigation au clavier.
+
+Regrouper le parcours dans un conteneur masqué et masquer son pied de page. Publier sur la même adresse, tester l’accueil et les raccourcis, puis inscrire le résultat ici. Pour rétablir le parcours, annuler le commit de masquage.

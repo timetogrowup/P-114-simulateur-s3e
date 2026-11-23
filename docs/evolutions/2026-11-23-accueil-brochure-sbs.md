@@ -35,3 +35,9 @@ Placer le questionnaire en tête, inclure le véhicule de fonction et afficher l
 | 4. Publier et contrôler | Comparer les contenus effectivement servis sur les deux URL avec les versions attendues. | À réaliser. |
 
 La saisie reste locale au navigateur. Le guide réutilise son modèle de comparaison par origine et statut. La question véhicule porte sur la situation avant l’entrée chez SBS. Une réponse inconnue conduit à une vérification documentaire. La brochure, le courrier et le rapport imprimable restent accessibles. Reprendre à la première étape ouverte et consigner les limites observées dans cette table.
+
+## Mise à jour de la brochure publique du 23 novembre 2026
+
+Remplacer les 17 planches de /sbs/ par les 18 diapositives du PowerPoint fourni par Patrick, dans l’ordre du support. La planche sur les jalons devient la page 3. Conserver la lecture sans saisie, le crédit collectif et le masquage du profil. La recette suit son propre calendrier.
+
+Exporter les diapositives en images, vérifier les titres et décaler les renvois concernés. Tester les 18 pages, les vignettes, la navigation et le zoom en affichage mobile et bureau. Publier sur la même URL, contrôler la version servie et documenter les résultats. Retour arrière par annulation du commit de publication.

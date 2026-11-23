@@ -18,3 +18,5 @@ Regrouper le parcours dans un conteneur masqué et masquer son pied de page. Pub
 ## Recette séparée du guide complet
 
 Publier sous `/sbs-recette/` la page autonome de la révision `6583265` pour tester la brochure et le parcours « Ma situation ». La page `/sbs/` conserve sa diffusion actuelle. Réutiliser le fichier historique avec ses ressources intégrées. Contrôler les deux URL, comparer les contenus servis aux versions attendues et tester la galerie et les filtres. Pour retirer la recette, supprimer uniquement `sbs-recette/index.html`.
+
+Qualification du 23 novembre 2026. La recette publiée au commit `c2d6371` sert exactement le HTML de `6583265`. Le contenu servi sous `/sbs/` correspond à `b136a61`. Sur la recette en ligne, le profil de test « Embauche directe / Cadre » donne accès à « Mon bilan ». Le bouton de lecture ouvre la couverture et le sélecteur propose les 17 diapositives. La validation métier des règles reste hors du périmètre de cette publication.

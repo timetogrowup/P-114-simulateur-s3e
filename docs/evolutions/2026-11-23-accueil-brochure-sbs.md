@@ -43,3 +43,7 @@ Remplacer les 17 planches de /sbs/ par les 18 diapositives du PowerPoint fourni 
 Exporter les diapositives en images, vérifier les titres et décaler les renvois concernés. Tester les 18 pages, les vignettes, la navigation et le zoom en affichage mobile et bureau. Publier sur la même URL, contrôler la version servie et documenter les résultats. Retour arrière par annulation du commit de publication.
 
 Publication qualifiée au commit 66dc410. GitHub Pages a déployé la version avec succès. Les 18 planches, le logo et le HTML servis sont identiques aux fichiers testés. Sur l’URL publique, Chromium a parcouru les 18 diapositives en largeur 1440 et 390 pixels. Les quatre accès (couverture, FAQ p. 5, position p. 6 et comparatifs p. 8), le sélecteur, précédent/suivant, le zoom, la fermeture et le masquage du profil ont été vérifiés. Le contrôle mobile est émulé. Les diapositives sont des rendus du PowerPoint, avec substitution des polices indisponibles. La recette séparée suit son propre calendrier.
+
+## Remplacement du support du 26 novembre 2026
+
+Patrick demande de publier les 18 pages de « Brochure SBS du S3E (3).pptx » sur /sbs/. Exporter chaque page dans l’ordre du PowerPoint en WebP, avec une nouvelle adresse pour éviter les anciennes images en cache. Conserver les accès directs aux pages 1, 5, 6 et 8 et la visionneuse. Vérifier les images, les raccourcis et la version servie. Annuler le commit de publication pour revenir à la brochure précédente.

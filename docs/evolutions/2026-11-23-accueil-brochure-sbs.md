@@ -47,3 +47,5 @@ Publication qualifiée au commit 66dc410. GitHub Pages a déployé la version av
 ## Remplacement du support du 26 novembre 2026
 
 Patrick demande de publier les 18 pages de « Brochure SBS du S3E (3).pptx » sur /sbs/. Exporter chaque page dans l’ordre du PowerPoint en WebP, avec une nouvelle adresse pour éviter les anciennes images en cache. Conserver les accès directs aux pages 1, 5, 6 et 8 et la visionneuse. Vérifier les images, les raccourcis et la version servie. Annuler le commit de publication pour revenir à la brochure précédente.
+
+Contrôles avant publication. Les 18 images ont été exportées du PowerPoint avec la police Aptos. Dans Chromium (390 × 844 et 1440 × 900), les 18 images se décodent dans l’ordre, les quatre accès ouvrent la page attendue et le zoom passe à 125 % puis revient à 100 %. Le contrôle mobile est émulé.

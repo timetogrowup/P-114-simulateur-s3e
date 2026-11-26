@@ -102,7 +102,7 @@
 @media print{#gallery[open]{display:none!important}}
 
 </style>
-<header class="app-header"><span class="s3e-lockup header-logo"><img data-s3e-official alt="Logo S3E, issu de la brochure" hidden><span class="s3e-fallback" aria-hidden="true">S3E</span></span><div class="header-copy"><strong>Mon passage chez SBS</strong><small>Version de revue · 18 novembre 2026</small></div></header>
+<header class="app-header"><span class="s3e-lockup header-logo"><img data-s3e-official alt="Logo S3E, issu de la brochure" hidden><span class="s3e-fallback" aria-hidden="true">S3E</span></span><div class="header-copy"><strong>Mon passage chez SBS</strong><small>Brochure du S3E · 26 novembre 2026</small></div></header>
 <main>
 <section class="feature" aria-labelledby="brochure-title">
   <div class="feature-intro">
@@ -135,7 +135,7 @@ function applyS3eOfficialLogo(){
 
 
 const titles=['Couverture','L’essentiel','Jalons clés des accords','Les conditions selon la situation','Les questions des salariés','La position du S3E','Les comparatifs','Convention et rémunération','Treizième mois','Ancienneté et vacances','Part variable','Repas et transport','Médailles et épargne salariale','CSE et prévoyance','Temps de travail et congés','Ancienneté et CET','Retraite et véhicules','Engagements du S3E'];
-const images=titles.map((_,i)=>'brochure-20261123/'+String(i+1).padStart(2,'0')+'.webp');
+const images=titles.map((_,i)=>'brochure-20261126/'+String(i+1).padStart(2,'0')+'.webp');
 const gallery=$('gallery');$('cover').src=images[0];
 for (const preview of document.querySelectorAll('[data-preview]')) preview.src=images[Number(preview.dataset.preview)-1];
 function options(el,items){el.replaceChildren(...items.map(([v,t])=>new Option(t,v)))}
